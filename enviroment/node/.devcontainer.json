@@ -1,0 +1,19 @@
+{
+	"name": "Dev Container node env",
+	"dockerComposeFile": "../docker-compose.yml",
+	"service": "tmp_project_name_node",
+	"workspaceFolder": "/workspace",
+	"shutdownAction": "none",
+	
+	"settings": { 
+		"terminal.integrated.defaultProfile.linux": "sh",
+		"terminal.integrated.profiles.linux": {
+			"sh": {
+				"path": "/bin/sh"
+			}
+		}
+	},
+
+	"extensions": []
+
+}

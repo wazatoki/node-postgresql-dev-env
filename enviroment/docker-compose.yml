@@ -1,0 +1,28 @@
+version: '3'
+
+services: 
+  tmp_project_name_node:
+    build:
+      dockerfile: "Dockerfile"
+      context: "node"
+    container_name: tmp_project_name_node
+    volumes:
+      - ".:/mnt/workspace:cached"
+      - "node_postgresql_dev_env_workspace:/workspace"
+      - "/var/run/docker.sock:/var/run/docker.sock"
+    tty: true
+    ports: 
+      - "3000:3000"
+    depends_on: 
+      - tmp_project_name_db
+  tmp_project_name_db:
+    image: postgres:11.3
+    container_name: tmp_project_name_db
+    environment: 
+      POSTGRES_USER: "tmp_project_name"
+      POSTGRES_PASSWORD: "tmp_project_name"
+      POSTGRES_DB: "tmp_project_namedb"
+
+volumes:
+  node_postgresql_dev_env_workspace:
+
