@@ -8,7 +8,7 @@ services:
     container_name: tmp_project_name_node
     volumes:
       - ".:/mnt/workspace:cached"
-      - "node_postgresql_dev_env_workspace:/workspace"
+      - "tmp_project_name_node_env_workspace:/workspace"
       - "/var/run/docker.sock:/var/run/docker.sock"
     tty: true
     ports: 
@@ -24,5 +24,5 @@ services:
       POSTGRES_DB: "tmp_project_namedb"
 
 volumes:
-  node_postgresql_dev_env_workspace:
+  tmp_project_name_node_env_workspace:
 
