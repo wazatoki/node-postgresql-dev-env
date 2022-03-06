@@ -5,7 +5,9 @@ RUN apk add --update \
             ttf-freefont \
             chromium \
             git \
-            docker docker-compose
+            docker docker-compose \
+            openjdk11 \
+            graphviz
 
 RUN mkdir /mnt/workspace && \
     mkdir /workspace && \
